@@ -1,0 +1,5 @@
+
+%%
+hotmail {printf("gmail");}
+
+%%
