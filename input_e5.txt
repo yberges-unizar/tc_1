@@ -1,0 +1,4 @@
+192.168.1.1 GET / index . html 200 15 ms
+10.0.0.5 POST / api / login 404 120 ms
+172.16.0.2 GET / api / v1 / users 200 80 ms
+192.168.1.1 DELETE / user /3 500 200 ms
