@@ -7,11 +7,13 @@
     int successful_requests = 0;
     int unsuccessful_requests = 0;
     int api_requests = 0;
-    const int IP_ADDRESS_COLUMN_NUMBER = 0;
-    const int METHOD_COLUMN_NUMBER = 1;
-    const int PATH_COLUMN_NUMBER = 2;
-    const int STATUS_CODE_COLUMN_NUMBER = 3;
-    const int RESPONSE_TIME_COLUMN_NUMBER = 4;
+    enum {
+        IP_ADDRESS_COLUMN_NUMBER,
+        METHOD_COLUMN_NUMBER,
+        PATH_COLUMN_NUMBER,
+        STATUS_CODE_COLUMN_NUMBER,
+        RESPONSE_TIME_COLUMN_NUMBER
+    };
 
     char *ip_address;
     char *method;
@@ -21,7 +23,7 @@
 %}
 
 %%
-[0-9a-zA-Z] {
+^[0-9a-zA-Z/]+" "|\n {
     switch (column_number) {
         case IP_ADDRESS_COLUMN_NUMBER:
             ip_address = yytext;
@@ -57,14 +59,14 @@
         api_requests++;
     }
 
-    printf("%s, %s, %s, %s, %s", ip_address, method, path, status_code, response_time);
+    printf("%s, %s, %s, %s, %s\n", ip_address, method, path, status_code, response_time);
 }
 %%
 
 int main() {
     int status = yylex();
     if (status == 0) {
-        printf("\nP: %s\nS: %s\nE: %s\nA: %s", processed_lines, successful_requests, unsuccessful_requests, api_requests);
+        printf("\nP: %d\nS: %d\nE: %d\nA: %d", processed_lines, successful_requests, unsuccessful_requests, api_requests);
     }
     return status;
 }

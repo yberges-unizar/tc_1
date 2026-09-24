@@ -360,9 +360,9 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[8] =
+static const flex_int16_t yy_accept[11] =
     {   0,
-        0,    0,    4,    3,    2,    1,    0
+        0,    0,    4,    3,    2,    1,    3,    1,    0,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -370,17 +370,17 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    1,    1,    1,
-        1,    1,    1,    1,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        1,    1,    1,    1,    1,    1,    3,    3,    3,    3,
+        1,    3,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    4,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
+        1,    1,    1,    1,    4,    4,    4,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
+        1,    1,    1,    1,    1,    1,    4,    4,    4,    4,
 
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    1,    1,    1,    1,    1,    1,    1,    1,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
+        4,    4,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -397,29 +397,33 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[4] =
+static const YY_CHAR yy_meta[5] =
     {   0,
-        1,    1,    1
+        1,    1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[8] =
+static const flex_int16_t yy_base[12] =
     {   0,
-        0,    0,    4,    5,    5,    5,    5
+        5,    0,    3,    8,    8,    8,    2,    8,    0,    8,
+        0
     } ;
 
-static const flex_int16_t yy_def[8] =
+static const flex_int16_t yy_def[12] =
     {   0,
-        7,    1,    7,    7,    7,    7,    0
+       11,   11,   10,   10,   10,   10,   10,   10,    7,    0,
+       10
     } ;
 
-static const flex_int16_t yy_nxt[9] =
+static const flex_int16_t yy_nxt[13] =
     {   0,
-        4,    5,    6,    7,    3,    7,    7,    7
+        4,    6,   10,    7,    8,    9,    5,    3,   10,   10,
+       10,   10
     } ;
 
-static const flex_int16_t yy_chk[9] =
+static const flex_int16_t yy_chk[13] =
     {   0,
-        1,    1,    1,    3,    7,    7,    7,    7
+       11,    2,    3,    2,    7,    7,    1,   10,   10,   10,
+       10,   10
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -446,19 +450,21 @@ char *yytext;
     int successful_requests = 0;
     int unsuccessful_requests = 0;
     int api_requests = 0;
-    const int IP_ADDRESS_COLUMN_NUMBER = 0;
-    const int METHOD_COLUMN_NUMBER = 1;
-    const int PATH_COLUMN_NUMBER = 2;
-    const int STATUS_CODE_COLUMN_NUMBER = 3;
-    const int RESPONSE_TIME_COLUMN_NUMBER = 4;
+    enum {
+        IP_ADDRESS_COLUMN_NUMBER,
+        METHOD_COLUMN_NUMBER,
+        PATH_COLUMN_NUMBER,
+        STATUS_CODE_COLUMN_NUMBER,
+        RESPONSE_TIME_COLUMN_NUMBER
+    };
 
     char *ip_address;
     char *method;
     char *path;
     char *status_code;
     char *response_time;
-#line 460 "lex.yy.c"
-#line 461 "lex.yy.c"
+#line 466 "lex.yy.c"
+#line 467 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -638,6 +644,9 @@ extern int yylex (void);
 #endif
 
 #define YY_RULE_SETUP \
+	if ( yyleng > 0 ) \
+		YY_CURRENT_BUFFER_LVALUE->yy_at_bol = \
+				(yytext[yyleng - 1] == '\n'); \
 	YY_USER_ACTION
 
 /** The main scanner function which does all the work.
@@ -675,9 +684,9 @@ YY_DECL
 		}
 
 	{
-#line 23 "ej5.l"
+#line 25 "ej5.l"
 
-#line 680 "lex.yy.c"
+#line 689 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -692,6 +701,7 @@ YY_DECL
 		yy_bp = yy_cp;
 
 		yy_current_state = (yy_start);
+		yy_current_state += YY_AT_BOL();
 yy_match:
 		do
 			{
@@ -704,13 +714,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 8 )
+				if ( yy_current_state >= 11 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 5 );
+		while ( yy_base[yy_current_state] != 8 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -735,8 +745,9 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
+/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 24 "ej5.l"
+#line 26 "ej5.l"
 {
     switch (column_number) {
         case IP_ADDRESS_COLUMN_NUMBER:
@@ -761,7 +772,7 @@ YY_RULE_SETUP
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 45 "ej5.l"
+#line 47 "ej5.l"
 {
     column_number = 0;
     processed_lines++;
@@ -777,15 +788,15 @@ YY_RULE_SETUP
         api_requests++;
     }
 
-    printf("%s, %s, %s, %s, %s", ip_address, method, path, status_code, response_time);
+    printf("%s, %s, %s, %s, %s\n", ip_address, method, path, status_code, response_time);
 }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 62 "ej5.l"
+#line 64 "ej5.l"
 ECHO;
 	YY_BREAK
-#line 788 "lex.yy.c"
+#line 799 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1070,6 +1081,7 @@ static int yy_get_next_buffer (void)
 	char *yy_cp;
     
 	yy_current_state = (yy_start);
+	yy_current_state += YY_AT_BOL();
 
 	for ( yy_cp = (yytext_ptr) + YY_MORE_ADJ; yy_cp < (yy_c_buf_p); ++yy_cp )
 		{
@@ -1082,7 +1094,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 8 )
+			if ( yy_current_state >= 11 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1110,11 +1122,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 8 )
+		if ( yy_current_state >= 11 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 7);
+	yy_is_jam = (yy_current_state == 10);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1229,6 +1241,8 @@ static int yy_get_next_buffer (void)
 	c = *(unsigned char *) (yy_c_buf_p);	/* cast for 8-bit char's */
 	*(yy_c_buf_p) = '\0';	/* preserve yytext */
 	(yy_hold_char) = *++(yy_c_buf_p);
+
+	YY_CURRENT_BUFFER_LVALUE->yy_at_bol = (c == '\n');
 
 	return c;
 }
@@ -1790,13 +1804,13 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 62 "ej5.l"
+#line 64 "ej5.l"
 
 
 int main() {
     int status = yylex();
     if (status == 0) {
-        printf("\nP: %s\nS: %s\nE: %s\nA: %s", processed_lines, successful_requests, unsuccessful_requests, api_requests);
+        printf("\nP: %d\nS: %d\nE: %d\nA: %d", processed_lines, successful_requests, unsuccessful_requests, api_requests);
     }
     return status;
 }
