@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 3
-#define YY_END_OF_BUFFER 4
+#define YY_NUM_RULES 2
+#define YY_END_OF_BUFFER 3
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,27 +360,31 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[11] =
+static const flex_int16_t yy_accept[51] =
     {   0,
-        0,    0,    4,    3,    2,    1,    3,    1,    0,    0
+        0,    0,    3,    2,    2,    2,    2,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    1,    0,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    3,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
-        1,    1,    1,    1,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        1,    1,    1,    1,    1,    1,    4,    4,    4,    4,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    3,    1,    4,    5,    6,
+        4,    4,    7,    8,    8,    8,    8,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    9,   10,    1,
+       11,    1,    1,    1,    1,   12,    1,    1,   13,   14,
+        1,    1,   15,   16,   17,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
 
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        4,    4,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -397,33 +401,68 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[5] =
+static const YY_CHAR yy_meta[18] =
     {   0,
-        1,    1,    1,    1
+        1,    2,    3,    4,    4,    4,    4,    4,    1,    1,
+        1,    1,    1,    1,    1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[12] =
+static const flex_int16_t yy_base[63] =
     {   0,
-        5,    0,    3,    8,    8,    8,    2,    8,    0,    8,
-        0
+        0,    0,  106,  107,  102,  101,    6,   10,  100,   99,
+       98,   14,   97,   96,   20,   13,   95,   94,   93,   26,
+       92,   91,   32,   15,   90,   89,   88,   38,   88,   87,
+       45,   45,   86,   85,   84,   40,   75,   74,   44,   70,
+       63,   45,   42,   45,   43,   28,   27,  107,   23,  107,
+       61,   63,   65,   28,   67,   69,   27,   71,   73,   26,
+       76,   79
     } ;
 
-static const flex_int16_t yy_def[12] =
+static const flex_int16_t yy_def[63] =
     {   0,
-       11,   11,   10,   10,   10,   10,   10,   10,    7,    0,
-       10
+       51,   51,   50,   50,   52,   53,   50,   54,   50,   52,
+       52,   52,   55,   56,   50,   57,   50,   55,   55,   55,
+       58,   59,   50,   60,   50,   58,   58,   58,   61,   62,
+       50,   50,   50,   61,   61,   61,   50,   50,   50,   50,
+       50,   50,   50,   50,   50,   50,   50,   50,   50,    0,
+       50,   50,   50,   50,   50,   50,   50,   50,   50,   50,
+       50,   50
     } ;
 
-static const flex_int16_t yy_nxt[13] =
+static const flex_int16_t yy_nxt[125] =
     {   0,
-        4,    6,   10,    7,    8,    9,    5,    3,   10,   10,
-       10,   10
+       50,   50,   50,    5,    6,    7,    5,    5,    8,   11,
+       11,   11,   12,    9,   14,   15,    8,   22,   23,   30,
+       31,   50,   16,   19,   19,   19,   20,   17,   16,   29,
+       21,   13,   45,   50,   24,   27,   27,   27,   28,   25,
+       24,   32,   49,   45,   48,   50,   32,   50,   35,   35,
+       35,   36,   33,   37,   47,   38,   42,   45,   39,   46,
+       43,    4,    4,    4,    4,    9,    9,   10,   10,   17,
+       17,   18,   18,   25,   25,   26,   26,   33,   45,   33,
+       34,   44,   34,   41,   40,   32,   32,   32,   32,   32,
+       24,   24,   24,   24,   24,   16,   16,   16,   16,   16,
+
+        8,    8,    8,    8,    8,   50,    3,   50,   50,   50,
+       50,   50,   50,   50,   50,   50,   50,   50,   50,   50,
+       50,   50,   50,   50
     } ;
 
-static const flex_int16_t yy_chk[13] =
+static const flex_int16_t yy_chk[125] =
     {   0,
-       11,    2,    3,    2,    7,    7,    1,   10,   10,   10,
-       10,   10
+        0,    0,    0,    2,    2,    2,    2,    2,    7,    7,
+        7,    7,    7,    7,    8,    8,   12,   16,   16,   24,
+       24,   12,   15,   15,   15,   15,   15,   15,   20,   60,
+       57,   54,   49,   20,   23,   23,   23,   23,   23,   23,
+       28,   36,   47,   46,   45,   28,   31,   36,   31,   31,
+       31,   31,   31,   32,   44,   32,   39,   43,   32,   42,
+       39,   51,   51,   51,   51,   52,   52,   53,   53,   55,
+       55,   56,   56,   58,   58,   59,   59,   61,   41,   61,
+       62,   40,   62,   38,   37,   35,   34,   33,   30,   29,
+       27,   26,   25,   22,   21,   19,   18,   17,   14,   13,
+
+       11,   10,    9,    6,    5,    3,   50,   50,   50,   50,
+       50,   50,   50,   50,   50,   50,   50,   50,   50,   50,
+       50,   50,   50,   50
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -443,28 +482,9 @@ char *yytext;
 #line 1 "ej5.l"
 #line 2 "ej5.l"
     #include <stdio.h>
-    #include <string.h>
-
-    int column_number = 0;
-    int processed_lines = 0;
-    int successful_requests = 0;
-    int unsuccessful_requests = 0;
-    int api_requests = 0;
-    enum {
-        IP_ADDRESS_COLUMN_NUMBER,
-        METHOD_COLUMN_NUMBER,
-        PATH_COLUMN_NUMBER,
-        STATUS_CODE_COLUMN_NUMBER,
-        RESPONSE_TIME_COLUMN_NUMBER
-    };
-
-    char *ip_address;
-    char *method;
-    char *path;
-    char *status_code;
-    char *response_time;
-#line 466 "lex.yy.c"
-#line 467 "lex.yy.c"
+    char* ip_address;
+#line 486 "lex.yy.c"
+#line 487 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -684,9 +704,10 @@ YY_DECL
 		}
 
 	{
-#line 25 "ej5.l"
+#line 10 "ej5.l"
 
-#line 689 "lex.yy.c"
+
+#line 710 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -714,13 +735,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 11 )
+				if ( yy_current_state >= 51 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 8 );
+		while ( yy_base[yy_current_state] != 107 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -745,58 +766,16 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
-/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 26 "ej5.l"
-{
-    switch (column_number) {
-        case IP_ADDRESS_COLUMN_NUMBER:
-            ip_address = yytext;
-            break;
-        case METHOD_COLUMN_NUMBER:
-            method = yytext;
-            break;
-        case PATH_COLUMN_NUMBER:
-            path = yytext;
-            break;
-        case STATUS_CODE_COLUMN_NUMBER:
-            status_code = yytext;
-            break;
-        case RESPONSE_TIME_COLUMN_NUMBER:
-            response_time = yytext;
-            break;
-    }
-    column_number++;
-}
+#line 12 "ej5.l"
+
 	YY_BREAK
 case 2:
-/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 47 "ej5.l"
-{
-    column_number = 0;
-    processed_lines++;
-
-    if ((status_code == "400") || (status_code == "500")) {
-        ip_address = "[ANON]";
-        unsuccessful_requests++;
-    } else {
-        successful_requests++;
-    }
-
-    if (path == "/api/") {
-        api_requests++;
-    }
-
-    printf("%s, %s, %s, %s, %s\n", ip_address, method, path, status_code, response_time);
-}
-	YY_BREAK
-case 3:
-YY_RULE_SETUP
-#line 64 "ej5.l"
+#line 14 "ej5.l"
 ECHO;
 	YY_BREAK
-#line 799 "lex.yy.c"
+#line 778 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1094,7 +1073,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 11 )
+			if ( yy_current_state >= 51 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1122,11 +1101,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 11 )
+		if ( yy_current_state >= 51 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 10);
+	yy_is_jam = (yy_current_state == 50);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1804,13 +1783,10 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 64 "ej5.l"
+#line 14 "ej5.l"
 
 
 int main() {
     int status = yylex();
-    if (status == 0) {
-        printf("\nP: %d\nS: %d\nE: %d\nA: %d", processed_lines, successful_requests, unsuccessful_requests, api_requests);
-    }
     return status;
 }
