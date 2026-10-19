@@ -1,0 +1,4 @@
+ | Yaret Berges Calero (838561)
+egrep "[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]" log_red.txt
+egrep "[0-9][0-9]?[0-9]?\.[0-9][0-9]?[0-9]?\.[0-9][0-9]?[0-9]?\.[0-9][0-9]?[0-9]?(:[0-9]+)*" log_red.txt
+egrep "[a-zA-Z0-9_\-]*@[a-zA-Z0-9\.]*\.(es|com)" log_red.txt
