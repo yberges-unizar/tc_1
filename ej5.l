@@ -20,7 +20,7 @@ API_PATH "/api/"[^ ]*
 SUCCESS_STATUS_CODE (2[0-9][0-9])
 ERROR_STATUS_CODE ([4,5][0-9][0-9])
 RESPONSE_TIME ([0-9]+ms)
-BLANK_SPACES ([ \t]|\n)
+BLANK_SPACES ([ \t\n])
 
 %%
 
