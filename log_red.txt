@@ -1,0 +1,33 @@
+2026-10-19 08:00:01 DHCP ACK mac=00:1A:2B:3C:4D:5E
+2026-10-19 08:00:02 DHCP ACK mac=aa:bb:cc:dd:ee:ff
+2026-10-19 08:00:03 ARP reply from FF:FF:FF:FF:FF:FF broadcast
+2026-10-19 08:00:04 iface eth0 hw 0a:1B:2c:3D:4e:5F
+2026-10-19 08:00:05 bad mac 00:1A:2B:3C:4D
+2026-10-19 08:00:06 bad mac 00-1A-2B-3C-4D-5E
+2026-10-19 08:00:07 bad mac 00:1G:2B:3C:4D:5E
+2026-10-19 08:00:08 bad mac 0:1:2:3:4:5
+2026-10-19 08:00:09 bad mac 001A:2B3C:4D5E
+2026-10-19 08:00:10 bad mac 00:1A:2B::3C:4D
+2026-10-19 08:01:01 connection from 192.168.1.1
+2026-10-19 08:01:02 connection from 10.0.0.5:8080
+2026-10-19 08:01:03 dns query to 8.8.8.8:53
+2026-10-19 08:01:04 server 172.16.254.1:443 accepted
+2026-10-19 08:01:05 blocked 999.999.999.999
+2026-10-19 08:01:06 bad ip 192.168.1
+2026-10-19 08:01:07 bad ip 192.168..1
+2026-10-19 08:01:08 bad ip 192,168,1,1
+2026-10-19 08:01:09 bad ip a.b.c.d
+2026-10-19 08:01:10 bad ip 1234.5.6
+2026-10-19 08:02:01 mail sent to admin@serv.com
+2026-10-19 08:02:02 mail from soporte.red@lab.es
+2026-10-19 08:02:03 user Jose_Luis-99@unizar.es logged in
+2026-10-19 08:02:04 alert to noc@mail.empresa.com
+2026-10-19 08:02:05 bad mail admin@serv.org
+2026-10-19 08:02:06 bad mail admin.serv.com
+2026-10-19 08:02:07 bad mail admin@servcom
+2026-10-19 08:02:08 bad mail admin@serv.co
+2026-10-19 08:02:09 bad mail admin at serv.com
+2026-10-19 08:02:10 user admin@ logged in from host.com
+2026-10-19 08:03:01 DHCP 00:1A:2B:3C:4D:5E got 192.168.0.10 user pepe@lab.es
+2026-10-19 08:03:02 nothing interesting here
+2026-10-19 08:03:03 reset 00:00:00:00:00:00 bind 0.0.0.0:0

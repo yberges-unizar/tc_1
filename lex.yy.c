@@ -730,7 +730,7 @@ YY_DECL
 		}
 
 	{
-#line 25 "ej5.l"
+#line 26 "ej5.l"
 
 
 #line 736 "lex.yy.c"
@@ -792,45 +792,45 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 27 "ej5.l"
+#line 28 "ej5.l"
 {ip_address = strdup(yytext);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 28 "ej5.l"
+#line 29 "ej5.l"
 {method = strdup(yytext);}
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 29 "ej5.l"
+#line 30 "ej5.l"
 {path = strdup(yytext); api_path_count++;}
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 30 "ej5.l"
+#line 31 "ej5.l"
 {path = strdup(yytext);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 31 "ej5.l"
+#line 32 "ej5.l"
 {status_code = strdup(yytext); success_status_code_count++; success_status_code = true;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 32 "ej5.l"
+#line 33 "ej5.l"
 {status_code = strdup(yytext); error_status_code_count++; success_status_code = false;}
 	YY_BREAK
 case 7:
 /* rule 7 can match eol */
 YY_RULE_SETUP
-#line 33 "ej5.l"
+#line 34 "ej5.l"
 
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 34 "ej5.l"
+#line 35 "ej5.l"
 {
     response_time = strdup(yytext);
     request_count++;
@@ -844,7 +844,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 46 "ej5.l"
+#line 47 "ej5.l"
 ECHO;
 	YY_BREAK
 #line 850 "lex.yy.c"
@@ -1852,7 +1852,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 46 "ej5.l"
+#line 47 "ej5.l"
 
 
 int main() {

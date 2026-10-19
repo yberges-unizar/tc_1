@@ -14,6 +14,7 @@
 %}
 
 OCTET_IP ((2[0-4][0-9])|(25[0-5])|(1[0-9][0-9])|([0-9][0-9])|([0-9]))
+IP {OCTET_IP}[.]{OCTET_IP}[.]{OCTET_IP}[.]{OCTET_IP}
 METHOD (GET)|(POST)|(PUT)|(DELETE)
 PATH "/"[^ ]*
 API_PATH "/api/"[^ ]*
@@ -24,7 +25,7 @@ BLANK_SPACES ([ \t\n])
 
 %%
 
-{OCTET_IP}[.]{OCTET_IP}[.]{OCTET_IP}[.]{OCTET_IP} {ip_address = strdup(yytext);}
+{IP} {ip_address = strdup(yytext);}
 {METHOD} {method = strdup(yytext);}
 {API_PATH} {path = strdup(yytext); api_path_count++;}
 {PATH} {path = strdup(yytext);}
