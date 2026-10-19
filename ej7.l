@@ -19,7 +19,7 @@ B[C]*(P[C]*P[C]*P[C]*)+E {
 
 }
 
-B[C]*P[C]*([P[C]*P[C]*P[C]*)*E {
+B[C]*P[C]*([P][C]*P[C]*P[C]*)*E {
 	printf("[F_1]");
 	for(int i =0; i < yyleng; i++){
 		if(yytext[i] != 'C'){
