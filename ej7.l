@@ -6,7 +6,8 @@
 %}
 
 %%
-B[C]*E {printf("[F_3]BE[F_3]"); }
+.|\n
+B[C]*E {printf("[F_3]BE[F_3]\n"); }
 B[C]*(P[C]*P[C]*P[C]*)+E {
 	printf("[OK]");
 	for(int i =0; i < yyleng; i++){
@@ -14,7 +15,7 @@ B[C]*(P[C]*P[C]*P[C]*)+E {
 			printf("%c", yytext[i]);
 		}
 	}
-	printf("[OK]");
+	printf("[OK]\n");
 
 }
 
@@ -25,7 +26,7 @@ B[C]*P[C]*([P[C]*P[C]*P[C]*)*E {
 			printf("%c", yytext[i]);
 		}
 	}
-	printf("[F_1]");
+	printf("[F_1]\n");
 
 }
 
@@ -36,7 +37,7 @@ B[C]*P[C]*P[C]*(P[C]*P[C]*P[C]*)*E {
 			printf("%c", yytext[i]);
 		}
 	}
-	printf("[F_2]");
+	printf("[F_2]\n");
 
 }
 
